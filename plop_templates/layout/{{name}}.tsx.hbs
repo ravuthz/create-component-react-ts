@@ -1,0 +1,21 @@
+import React from 'react';
+
+import classes from './{{name}}.module.css';
+
+interface {{pascalCase name}}Props {
+
+}
+
+interface {{pascalCase name}}State {
+
+}
+
+const {{pascalCase name}}: React.FC<{{pascalCase name}}Props> = (props) => {
+  return (
+    <div data-testid="{{pascalCase name}}" className={ classes.{{pascalCase name}} }>
+      {props.children}
+    </div>
+  );
+};
+
+export default {{pascalCase name}};

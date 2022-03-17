@@ -1,6 +1,30 @@
 {
   "name": "create-component-react-ts",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT"
+  "version": "1.0.42",
+  "description": "A NPM Package use to generate react typescript components using plop package",
+  "main": "build/index.js",
+  "type": "module",
+  "bin": {
+    "create-component-react-ts": "./bin/create-component-react-ts.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ravuthz/create-component-react-ts.git"
+  },
+  "keywords": [
+    "npm",
+    "node",
+    "js",
+    "javascript",
+    "cli"
+  ],
+  "author": "Vannaravuth Yo <ravuthz@gmail.com> (https://ravuthz.github.io)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ravuthz/create-component-react-ts/issues"
+  },
+  "homepage": "https://github.com/ravuthz/create-component-react-ts#readme",
+  "dependencies": {
+    "plop": "^3.0.5"
+  }
 }

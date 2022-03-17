@@ -1,0 +1,15 @@
+import React from 'react';
+import { MemoryRouter } from 'react-router-dom';
+import { cleanup, render, screen } from '@testing-library/react';
+
+import {{pascalCase name}} from './{{name}}';
+
+describe('<{{pascalCase name}} />', () => {
+  afterEach(cleanup);
+
+  test('renders', () => {
+    render(<{{pascalCase name}} />, { wrapper: MemoryRouter })
+    const page: HTMLElement = screen.getByTestId('{{pascalCase name}}');
+    expect(page).toBeInTheDocument();
+  });
+});

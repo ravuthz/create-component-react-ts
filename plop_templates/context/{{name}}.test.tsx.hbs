@@ -1,0 +1,56 @@
+import '@testing-library/jest-dom';
+
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import { renderHook, act } from '@testing-library/react-hooks';
+
+import { {{pascalCase name}}Provider, {{pascalCase name}}Context, use{{pascalCase name}}Ctx } from './{{name}}'
+
+describe('{{pascalCase name}}Provider', () => {
+  const initialValue = {
+    state: 0
+  };
+
+  const wrapper = ({ children }: any) => (
+    <{{pascalCase name}}Provider value={initialValue}>
+      {children}
+    </{{pascalCase name}}Provider>
+  );
+
+  test('render {{pascalCase name}}Consumer from {{pascalCase name}}Context', () => {
+    const {{pascalCase name}}Consumer: React.FC = (props: any) => {
+      return (
+        <{{pascalCase name}}Context.Consumer>
+          {value => (
+            <>
+              <h1>{{pascalCase name}}Consumer</h1>
+              <pre>{JSON.stringify(value, null, 2)}</pre>
+              <pre>{JSON.stringify(props, null, 2)}</pre>
+            </>
+          )}
+        </{{pascalCase name}}Context.Consumer>
+      );
+    };
+
+    render(<{{pascalCase name}}Consumer />, { wrapper })
+    expect(screen.getByText(/{{pascalCase name}}Consumer/)).toBeInTheDocument();
+  })
+
+  test('use use{{pascalCase name}}Ctx and update state', () => {
+    const { result } = renderHook(() => use{{pascalCase name}}Ctx(), { wrapper });
+
+    expect(result.current.state).toBe(initialValue.state);
+    expect(result.current.hasState()).toBe(initialValue.state !== undefined);
+
+    act(() => {
+      result.current.setState(1);
+    });
+    expect(result.current.state).toBe(1);
+
+    act(() => {
+      result.current.clearState();
+    });
+    expect(result.current.state).toBe(undefined);
+    expect(result.current.hasState()).toBe(false);
+  })
+});

@@ -1,0 +1,25 @@
+import React, { createContext, useCallback, useContext, useState } from 'react';
+
+const {{pascalCase name}}Context = createContext({});
+
+const {{pascalCase name}}Provider: React.FC<any> = ({ value, children }: any) => {
+  const [state, setState] = useState(value?.state);
+  const hasState = useCallback(() => state !== undefined, [state]);
+  const clearState = useCallback(() => setState((s: any) => s = undefined), []);
+
+  const contextValue = { state, setState, hasState, clearState };
+
+  return (
+    <{{pascalCase name}}Context.Provider value={contextValue}>
+      {children}
+    </{{pascalCase name}}Context.Provider>
+  );
+};
+
+const use{{pascalCase name}}Ctx: any = () => useContext({{pascalCase name}}Context);
+
+export {
+  {{pascalCase name}}Provider,
+  {{pascalCase name}}Context,
+  use{{pascalCase name}}Ctx
+};
