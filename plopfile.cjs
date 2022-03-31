@@ -62,9 +62,10 @@ module.exports = function (plop) {
       addInput('name', 'Hook Name: ')
     ],
     actions: [{
-      type: 'add',
-      path: 'src/hooks/{{snakeCase name}}.tsx',
-      templateFile: 'plop_templates/hook.tsx.hbs',
+      type: 'addMany',
+      destination: 'src/hooks/{{name}}',
+      templateFiles: 'plop_templates/hook/*.hbs',
+      base: 'plop_templates/hook',
     },]
   });
 

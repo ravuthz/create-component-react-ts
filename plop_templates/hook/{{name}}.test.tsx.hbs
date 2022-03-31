@@ -1,0 +1,12 @@
+import { renderHook, act } from '@testing-library/react-hooks';
+import use{{pascalCase name}} from './{{name}}';
+
+test('render use{{pascalCase name}}', () => {
+  const { result } = renderHook(() => use{{pascalCase name}}())
+
+  act(() => {
+    result.current.increase();
+  })
+
+  expect(result.current.count).toBe(1);
+})
