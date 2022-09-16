@@ -3,6 +3,18 @@
 A NPM Package use to generate react typescript components using [plop](https://www.npmjs.com/package/plop).
 
 
+## Run on npx
+```bash
+npx create-component-react-ts component TodoTable
+npx create-component-react-ts layout AdminLayout
+npx create-component-react-ts page TodoPage
+npx create-component-react-ts context Todo
+npx create-component-react-ts hook Todo
+npx create-component-react-ts service ApiTodo
+npx create-component-react-ts utils Storage 
+```
+
+
 ## Install
 
 #### Using NPM
